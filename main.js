@@ -1,11 +1,12 @@
-#! usr/bin/env node
+#! /usr/bin/env node
 import inquirer from "inquirer";
+import chalk from "chalk";
 let myBalance = 10000;
 let myPin = 22445;
 let pinAnswer = await inquirer.prompt([
     {
         name: "pin",
-        message: "enter yuor pin",
+        message: (chalk.bgBlue.bold, "enter yuor pin:"),
         type: "number"
     }
 ]);
@@ -14,9 +15,9 @@ if (pinAnswer.pin === myPin) {
     let operationAns = await inquirer.prompt([
         {
             name: "operation",
-            message: "Please select your option.",
+            message: (chalk.yellow.bgGray, "Please select your option."),
             type: "list",
-            choices: ["withdraw", "cheack balance.", "fast cash"]
+            choices: [" withdraw", "cheack balance.", " fast cash"]
         }
     ]);
     if (operationAns.operation === "withdraw") {

@@ -1,4 +1,4 @@
-#! usr/bin/env node
+#! /usr/bin/env node
 import inquirer from "inquirer";
 
 let myBalance = 10000;
@@ -11,7 +11,7 @@ let pinAnswer = await inquirer.prompt(
       
 
          name: "pin",
-         message: "enter yuor pin",
+         message: ("enter yuor pin:"),
          type: "number"
        
        }
@@ -28,7 +28,7 @@ if (pinAnswer.pin === myPin) {
          name:"operation",
          message:"Please select your option.",
          type:"list",
-         choices:["withdraw","cheack balance.", "fast cash"]
+         choices:[" withdraw","cheack balance.", " fast cash"]
              
            }
         ]
